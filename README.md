@@ -11,10 +11,5 @@ Using duckdb:
 
 
 ```sql
-SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/test_neg.parquet';
-SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/test_pos.parquet';
-
-SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/train_neg.parquet';
-SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/train_pos.parquet';
-
+SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/dataset.parquet';
 ```
