@@ -10,7 +10,7 @@ The files in ´./raw-data' have been extracted directly from the source.
 Using duckdb:
 
 
-``sql
+```sql
 SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/test_neg.parquet';
 SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/test_pos.parquet';
 
