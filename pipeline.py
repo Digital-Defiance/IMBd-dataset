@@ -24,14 +24,14 @@ def ingest_data(conn, split, sentiment):
         key = lambda file: int(file.split(".")[0].split("_")[0])
     ):
         name = file.split(".")[0]
-        id, score = [int(x) for x in name.split("_")]
+        sentiment_id, score = [int(x) for x in name.split("_")]
         full_path = path + file
         with open(full_path) as file:
             review = file.read()
     
         conn.execute(
-            f"INSERT INTO {table_name} (id, score, review) VALUES (?, ?, ?)", 
-            (id, score, review)
+            f"INSERT INTO dataset (sentiment_id, score, review, sentiment) VALUES (?, ?, ?, ?);", 
+            (sentiment_id, score, review, sentiment)
         )
 
 @task

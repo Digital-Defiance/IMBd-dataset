@@ -1,10 +1,8 @@
 
 
+CREATE SEQUENCE sequence INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 50001 NO CYCLE;
 
-CREATE TABLE test_neg(id INTEGER, review VARCHAR, score INTEGER);
-CREATE TABLE test_pos(id INTEGER, review VARCHAR, score INTEGER);
-CREATE TABLE train_neg(id INTEGER, review VARCHAR, score INTEGER);
-CREATE TABLE train_pos(id INTEGER, review VARCHAR, score INTEGER);
+CREATE TABLE dataset(id INTEGER PRIMARY KEY DEFAULT(nextval('sequence')), review VARCHAR, sentiment_id INTEGER, sentiment VARCHAR, score INTEGER, CHECK(((sentiment = 'pos') OR (sentiment = 'neg'))), CHECK(((score >= 7) OR (score <= 4))));
 
 
 
