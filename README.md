@@ -13,3 +13,12 @@ Using duckdb:
 ```sql
 SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/dataset.parquet';
 ```
+
+
+To reproduce this dataset:
+
+```
+rm -rf dataset
+pip install -r requirements.txt
+python pipeline.py
+```
