@@ -11,7 +11,8 @@ Using duckdb:
 
 
 ```sql
-SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/dataset.parquet';
+SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/train.parquet';
+SELECT * FROM 'https://github.com/Digital-Defiance/IMBd-dataset/raw/main/dataset/test.parquet';
 ```
 
 
