@@ -35,7 +35,7 @@ def ingest_data(conn: duckdb.DuckDBPyConnection, split: DatasetSplit, sentiment:
     path = f"raw-data/{split}/{sentiment}/"
     list_of_files = os.listdir(path)
     key = lambda file: int(file.split(".")[0].split("_")[0])
-    for file in sorted(list_of_files, key=key):
+    for id, file in enumerate(sorted(list_of_files, key=key)):
 
         name = file.split(".")[0]
         sentiment_id, score = [int(x) for x in name.split("_")]
@@ -44,7 +44,7 @@ def ingest_data(conn: duckdb.DuckDBPyConnection, split: DatasetSplit, sentiment:
             review = file.read()
 
         cmd = f"INSERT INTO {split} (sentiment_id, score, review, sentiment) VALUES (?, ?, ?, ?);"
-        values = (sentiment_id, score, review, sentiment)
+        values = (id, score, review, sentiment)
         conn.execute(cmd, values)
 
 @task
