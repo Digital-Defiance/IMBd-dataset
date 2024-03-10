@@ -44,7 +44,7 @@ def ingest_data(conn: duckdb.DuckDBPyConnection, split: DatasetSplit, sentiment:
             review = file.read()
 
         cmd = f"INSERT INTO {split} (sentiment_id, score, review, sentiment) VALUES (?, ?, ?, ?);"
-        values = (id + 1, sentiment_id, score, review, sentiment)
+        values = (sentiment_id, score, review, sentiment)
         conn.execute(cmd, values)
 
 @task
